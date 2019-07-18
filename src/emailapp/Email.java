@@ -9,13 +9,18 @@ class Email {
 
     private int mailboxCapacity;
 
-    // --- constructor will receive first & last name
+    public Email(String firstName, String lastName) {
+        this.firtsName = firstName;
+        this.lastName = lastName;
+
+        System.out.println("EMAIL CREATED :: " + this.firtsName + " " + this.lastName);
+    }
 
     // --- We will ask for department
 
     // --- generate radnom password
 
     // --- set mailbox capacity
-    
+
     // --- set alternate email / change the password
 }
