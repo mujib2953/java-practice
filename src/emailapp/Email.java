@@ -54,11 +54,15 @@ public class Email {
         return new String(password);
     }
 
-    // --- We will ask for department
+    public void setMailboxCapacity(int capacity) {
+        this.mailboxCapacity = capacity;
+    }
 
-    // --- generate radnom password
+    public void setAlternateEmail(String email) {
+        this.alternateEmail = email;
+    }
 
-    // --- set mailbox capacity
-
-    // --- set alternate email / change the password
+    public void changePassword(String password) {
+        this.password = password;
+    }
 }
