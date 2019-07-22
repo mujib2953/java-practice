@@ -36,7 +36,7 @@ public class Student {
         do {
             System.out.print("Enter course to enrol (Q to quit): ");
 
-            String course = sc.next();
+            String course = sc.nextLine();
             if (course.equals("")) {
                 continue;
             }
@@ -58,7 +58,7 @@ public class Student {
         viewBalance();
         System.out.print("\nEnter your payment amount $");
         int amount = sc.nextInt(10);
-
+        sc.nextLine();
         tutionBalance -= amount;
 
         System.out.println("\nThank you for paying $" + amount);
