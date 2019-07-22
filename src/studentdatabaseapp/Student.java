@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Student {
     private String firstName;
     private String lastName;
-    private String courses;
+    private String courses = "";
     private String studentID;
     
     private int gradeYear;
@@ -40,15 +40,33 @@ public class Student {
 
             String course = sc.nextLine();
 
-            if (!course.equals("Q") && sc.hasNext()) {
+            if (course.equals("")) {
+                continue;
+            }
+
+            if (!course.equals("Q")) {
                 courses = courses + "\n" + course;
                 tutionBalance = tutionBalance + costOfCourse;
             } else {
                 break;
             }
         } while( 1 != 0);
-        System.out.println("ENROLLED IN : " + courses);
-        System.out.println("TUTION BALANCE : " + tutionBalance);
+        System.out.println("\nENROLLED IN : " + courses);
+    }
+
+    public void viewBalance() {
+        System.out.println("\nYour balance is : $" + tutionBalance);
+    }
+
+    public void payTution() {
+        viewBalance();
+        System.out.print("\nEnter your payment amount $");
+        int amount = sc.nextInt(10);
+
+        tutionBalance -= amount;
+
+        System.out.println("\nThank you for paying $" + amount);
+        viewBalance();
     }
 
     private void setStudentId() {
