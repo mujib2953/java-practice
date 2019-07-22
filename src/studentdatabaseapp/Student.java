@@ -29,8 +29,6 @@ public class Student {
         gradeYear = sc.nextInt();
         
         setStudentId();
-
-        System.out.println("\n" + firstName + ", " + lastName + " from " + gradeYear + " SID : " + studentID);
     }
 
     public void enroll() {
@@ -38,20 +36,18 @@ public class Student {
         do {
             System.out.print("Enter course to enrol (Q to quit): ");
 
-            String course = sc.nextLine();
-
+            String course = sc.next();
             if (course.equals("")) {
                 continue;
             }
 
             if (!course.equals("Q")) {
-                courses = courses + "\n" + course;
+                courses = courses + "\n " + course;
                 tutionBalance = tutionBalance + costOfCourse;
             } else {
                 break;
             }
         } while( 1 != 0);
-        System.out.println("\nENROLLED IN : " + courses);
     }
 
     public void viewBalance() {
@@ -67,6 +63,14 @@ public class Student {
 
         System.out.println("\nThank you for paying $" + amount);
         viewBalance();
+    }
+
+    public String toString() {
+        return "\nName: " + firstName + " " + lastName + 
+        "\nGrade level: " + gradeYear +
+        "\nStudent ID:" + studentID +
+        "\nCourses enrolled: " + courses +
+        "\nBalance $" + tutionBalance;
     }
 
     private void setStudentId() {
