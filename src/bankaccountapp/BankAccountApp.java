@@ -7,6 +7,7 @@ public class BankAccountApp {
         Saving sv1 = new Saving("Davy John", "987654123", 2500);
         
         ch1.showInfo();
+        System.out.println("\n*****************");
         sv1.showInfo();
     }
 }
