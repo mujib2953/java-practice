@@ -9,5 +9,9 @@ public class BankAccountApp {
         ch1.showInfo();
         System.out.println("\n*****************");
         sv1.showInfo();
+
+        sv1.deposit(5000);
+        sv1.withdraw(200);
+        sv1.transfer("Brokerage", 2000);
     }
 }
