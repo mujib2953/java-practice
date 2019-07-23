@@ -13,5 +13,7 @@ public class BankAccountApp {
         sv1.deposit(5000);
         sv1.withdraw(200);
         sv1.transfer("Brokerage", 2000);
+
+        sv1.compound();
     }
 }
