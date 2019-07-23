@@ -11,6 +11,11 @@ public class Checking extends Account {
         setDebitCard();
     }
 
+    @Override
+    public void setRate() {
+        rate = getBaseRate() * .15;
+    }
+
     public void showInfo() {
         System.out.println("ACCOUNT TYPE : Checking");
         super.showInfo();
