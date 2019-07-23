@@ -19,8 +19,16 @@ public abstract class Account implements IBaseRate {
         index++;
 
         accountnumber = setAccountNumber();
+    }
 
-        System.out.println("\nName : " + name +" SSN : " + sSN + " BALANCE : $" + balance + "ACCOUNT # :" + accountnumber);
+    public void showInfo() {
+        
+        System.out.println(
+            "\nName : " + name + 
+            "\nSSN : " + sSN + 
+            "\nBALANCE : $" + balance +
+            "\nACCOUNT # :" + accountnumber
+        );
     }
 
     private String setAccountNumber() {

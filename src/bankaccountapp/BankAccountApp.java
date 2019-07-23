@@ -6,5 +6,7 @@ public class BankAccountApp {
         Checking ch1 = new Checking("John Doe", "321456789", 1500);
         Saving sv1 = new Saving("Davy John", "987654123", 2500);
         
+        ch1.showInfo();
+        sv1.showInfo();
     }
 }
