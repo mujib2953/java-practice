@@ -2,8 +2,8 @@ package bankaccountapp;
 
 public class Checking extends Account {
 
-    int debitcardNumber;
-    int debitcardPIN;
+    private int debitcardNumber;
+    private int debitcardPIN;
     
     public Checking(String name, String sSN, double initDeposit) {
         super(name, sSN, initDeposit);

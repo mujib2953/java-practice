@@ -2,12 +2,12 @@ package bankaccountapp;
 
 public abstract class Account implements IBaseRate {
 
-    String name;
-    String sSN;
-    String accountnumber;
+    private String name;
+    private String sSN;
+    protected String accountnumber;
 
-    double balance;
-    double rate;
+    private double balance;
+    protected double rate;
 
     private static int index = 10000;
 
