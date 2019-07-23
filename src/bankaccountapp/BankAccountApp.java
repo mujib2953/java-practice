@@ -1,5 +1,6 @@
 package bankaccountapp;
 
+import java.util.LinkedList;
 import java.util.List;
 
 import utilities.CSV;
@@ -7,27 +8,28 @@ import utilities.CSV;
 public class BankAccountApp {
     public static void main(String... args) {
 
-        /* Checking ch1 = new Checking("John Doe", "321456789", 1500);
-        Saving sv1 = new Saving("Davy John", "987654123", 2500);
-        
-        ch1.showInfo();
-        System.out.println("\n*****************");
-        sv1.showInfo();
+        List<Account> accounts = new LinkedList<Account>();
 
-        sv1.deposit(5000);
-        sv1.withdraw(200);
-        sv1.transfer("Brokerage", 2000);
-
-        sv1.compound(); */
-        String filePath = "C:\\CSV\\NewBankAccounts.csv";
+        final String filePath = "C:\\CSV\\NewBankAccounts.csv";
         List<String[]> newAccountHolder = CSV.read(filePath);
 
         for (String[] accountHolder : newAccountHolder) {
-            System.out.println(accountHolder[0]);
-            System.out.println(accountHolder[1]);
-            System.out.println(accountHolder[2]);
-            System.out.println(accountHolder[3]);
-            System.out.println("\n");
+            String name = accountHolder[0];
+            String sSN = accountHolder[1];
+            String accountType = accountHolder[2];
+            double initDeposit = Double.parseDouble(accountHolder[3]);
+
+            if (accountType.equals("Savings")) {
+                accounts.add(new Saving(name, sSN, initDeposit));
+            } else if (accountType.equals("Checking")) {
+                accounts.add(new Checking(name, sSN, initDeposit));
+            } else {
+                System.out.println("Error reading Acount Type.");
+            }
+        }
+
+        for (Account acc: accounts) {
+            acc.showInfo();
         }
     }
 }

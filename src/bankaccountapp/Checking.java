@@ -17,7 +17,7 @@ public class Checking extends Account {
     }
 
     public void showInfo() {
-        System.out.println("ACCOUNT TYPE : Checking");
+        System.out.println("\nACCOUNT TYPE : Checking");
         super.showInfo();
         System.out.println(
             "Your Checking Account Features: " +
