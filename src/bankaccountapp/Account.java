@@ -9,11 +9,25 @@ public abstract class Account implements IBaseRate {
     double balance;
     double rate;
 
+    private static int index = 10000;
+
     public Account(String name, String sSN, double initDeposit) {
         this.name = name;
         this.sSN = sSN;
         balance = initDeposit;
 
-        System.out.println("\nName : " + name +" SSN : " + sSN + " BALANCE : $" + balance);
+        index++;
+
+        accountnumber = setAccountNumber();
+
+        System.out.println("\nName : " + name +" SSN : " + sSN + " BALANCE : $" + balance + "ACCOUNT # :" + accountnumber);
+    }
+
+    private String setAccountNumber() {
+        String last2OfSSN = sSN.substring(sSN.length() - 2, sSN.length());
+        int uniqueId = index;
+        int random3Digit = (int) (Math.random() * Math.pow(10, 3));
+
+        return last2OfSSN + uniqueId + random3Digit;
     }
 }
